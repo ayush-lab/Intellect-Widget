@@ -1,18 +1,18 @@
-import styles from "./Navbar.module.css"
-import { Link } from "react-router-dom";
+import "./Navbar.css"
+import { NavLink } from "react-router-dom";
 
 const Navbar =()=>{
-    return(<nav className={styles.navbar}>
-        <div className={styles.logo}>
-            Logo
+    return(<nav className="navbar">
+        <div className="logo">
+            <h2>Intellect</h2>
         </div>
 
-        <div className={styles.widgets}>
-            <Link to="/" style={{textDecoration:"none"}}><span>Slider</span></Link>
-            <Link to="/Levler" style={{textDecoration:"none"}}><span>Levler</span></Link>
+        <div className="widgets">
+            <NavLink className="link" to="/" >Slider</NavLink>
+            <NavLink className="link" to="/volume" >Volume</NavLink>
         </div>
 
-        <div>
+        <div className="documentation">
             <span> Documentation </span>    
         </div>
 

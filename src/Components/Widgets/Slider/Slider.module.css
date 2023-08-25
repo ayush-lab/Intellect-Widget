@@ -1,8 +1,16 @@
+.Slider_Wrapper{
+    width: 100vw;
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #325D6E;
+}
+
 .Slider{
     width: 400px;
     height:400px;
-    background: #325D6E;
-
+    /* background: red; */
 }
 
 .Slider_container{
@@ -15,9 +23,9 @@
 }
 
 .outer_circle{
-    width: 50%;
-    height:50%;
-    border:dashed 2px white;
+    width: 200px;
+    height:200px;
+    border:dashed 2px rgba(255, 255, 255, 0.471);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -27,8 +35,8 @@
 .outer_main_circle{
     width: 90%;
     height:90%;
-    /* border:solid 3px white;
-    border-radius: 50%; */
+    /* border:solid 3px white;*/
+    border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,3 +50,31 @@
     accent-color: #6CD1DC;
     background-color: white;
 }
+
+/* Mobile Phones */
+@media only screen and (max-width: 400px) {
+    /* Your styles for mobile phones here */
+    /* .Slider{
+        width: 300px;
+        height:300px;
+    } */
+    
+    .outer_circle{
+        width: 150px;
+        height:150px;
+    }
+} 
+  /* Tablets */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Your styles for tablets here */
+  }
+  
+  /* Laptops/Desktops */
+  @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    /* Your styles for laptops/desktops here */
+  }
+  
+  /* Large Screens */
+  @media only screen and (min-width: 1440px) {
+    /* Your styles for large screens here */
+  }

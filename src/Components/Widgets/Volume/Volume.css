@@ -1,0 +1,82 @@
+.Volume_Wrapper{
+    width: 100vw;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #325D6E;
+}
+
+.Volume{
+    width: 400px;
+    height:400px;
+    background: #325D6E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:12px;
+}
+.Volume_label{
+    color:white;
+}
+.Volume_label span{
+    font-weight: bolder;
+}
+
+.bar1,
+.bar2,
+.bar3,
+.bar4,
+.bar5{
+    border-top-right-radius:40px;
+    border-bottom-right-radius:75px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 75px;
+    height:30px;
+    background: #819DA8;
+    cursor: pointer;
+}
+
+
+.bar1{
+    width: 50%;
+}
+
+.bar2{
+    width: 40%;
+}
+
+.bar3{
+    width: 30%;
+}
+
+.bar4{
+    width: 20%;
+}
+.bar5{
+    width: 10%;
+    border-top-right-radius:60px;
+    border-bottom-right-radius:141px;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 141px;
+}
+
+@media only screen and (max-width: 400px) {
+    .Volume{
+        width: 100vw;
+        /* height:400px; */
+        gap:12px;
+    }
+   
+    .bar1,
+    .bar2,
+    .bar3,
+    .bar4,
+    .bar5
+    {
+        height:20px;
+    }
+   
+}

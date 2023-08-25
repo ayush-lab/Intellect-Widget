@@ -4,14 +4,9 @@ const CircleProgress = props => {
     size = 150,
     progress = 0,
     trackWidth = 10,
-    trackColor = `#ddd`,
     indicatorWidth = 10,
     indicatorColor = `white`,
     indicatorCap = `round`,
-    label = `Loading...`,
-    labelColor = `#333`,
-    spinnerMode = false,
-    spinnerSpeed = 1,
     setProgress
   } = props
 
@@ -24,12 +19,16 @@ const CircleProgress = props => {
     console.log(e.target.value)
     let value = e.target.value;
 
-    console.log(value.toString().length)
+    if(isNaN(value)){
+      alert("please enter a number")
+      return;
+    }
 
     if(value <=10)  
       setProgress(value)
 
-    else alert("Invalid input")
+    else 
+      alert("Invalid input, Enter between 0 and 10. Your value = " + value)
   }
    
     return (
@@ -44,10 +43,10 @@ const CircleProgress = props => {
           >
             <circle
               className="svg-pi-track"
-              cx={center}
-              cy={center}
+              // cx={center}
+              // cy={center}
+              // r={radius}
               fill="#446D7D"
-              r={radius}
               // stroke={trackColor}
               // strokeWidth={trackWidth}
             />
@@ -70,7 +69,6 @@ const CircleProgress = props => {
                 type="text" 
                 value={Math.floor(progress/10)}
                 onChange={ProgressInputHandler} 
-                // defaultValue={progress/100}
                 />
             </span>
           </div>

@@ -30,6 +30,13 @@ input[type=number] {
   transform: rotate(-90deg); /* Fix the orientation */
 }
 
+.svg-pi-track,
+.svg-pi-indicator{
+  cx:75px;
+  cy:75px;
+  r:65px;
+}
+
 /* Animated spinner version */
 .svg-pi-indicator--spinner {
   animation: spinner .75s linear infinite;
@@ -78,5 +85,41 @@ input[type="text"]
   height: 60%;
   border-radius: 50%;
   background: #1fb5cc;
-  /* background-color: #446D7D; */
+}
+
+
+
+/* Mobile Phones */
+@media only screen and (max-width: 400px) {
+  /* Your styles for mobile phones here */
+  .svg-pi-track,
+  .svg-pi-indicator{
+    cx:68px;
+    cy:76px;
+    r:55px;
+  }
+  .innermost-asset{
+    width: 70px;
+    height: 70px;
+  }
+  input[type="text"]
+  {
+      font-size: 18px;
+  } 
+
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Your styles for tablets here */
+}
+
+/* Laptops/Desktops */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  /* Your styles for laptops/desktops here */
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1440px) {
+  /* Your styles for large screens here */
 }

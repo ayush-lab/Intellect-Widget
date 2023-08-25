@@ -1,0 +1,42 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding-left:24px;
+    padding-right: 24px;
+    height: 64px;
+    background:#05445E;
+    color:white;
+    align-items: center;
+}
+
+.widgets{
+    cursor: pointer;
+    display: flex;
+    gap:12px;
+    text-decoration: none !important;
+}
+
+.link{
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.611);
+}
+
+
+@media only screen and (max-width: 400px) {
+    .logo{
+        display: none;
+    }
+    .documentation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .documentation span{
+        font-size:12px;
+        margin: 0;
+        padding: 0;
+    }
+    .link{
+        font-size: 12px;
+    }
+}
