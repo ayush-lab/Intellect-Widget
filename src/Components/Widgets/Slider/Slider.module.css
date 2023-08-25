@@ -1,0 +1,44 @@
+.Slider{
+    width: 400px;
+    height:400px;
+    background: #325D6E;
+
+}
+
+.Slider_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
+}
+
+.outer_circle{
+    width: 50%;
+    height:50%;
+    border:dashed 2px white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.outer_main_circle{
+    width: 90%;
+    height:90%;
+    /* border:solid 3px white;
+    border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Slider_input{
+    margin-top:16px;
+}
+
+.Slider_input input[type="range"]{
+    accent-color: #6CD1DC;
+    background-color: white;
+}
