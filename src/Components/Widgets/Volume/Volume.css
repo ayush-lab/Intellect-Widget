@@ -25,11 +25,7 @@
     font-weight: bolder;
 }
 
-.bar1,
-.bar2,
-.bar3,
-.bar4,
-.bar5{
+.bar{
     border-top-right-radius:40px;
     border-bottom-right-radius:75px;
     border-top-left-radius: 40px;
@@ -70,11 +66,7 @@
         gap:12px;
     }
    
-    .bar1,
-    .bar2,
-    .bar3,
-    .bar4,
-    .bar5
+    .bar
     {
         height:20px;
     }

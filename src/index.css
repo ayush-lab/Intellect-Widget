@@ -27,7 +27,7 @@ input[type=number] {
 }
 
 .svg-pi {
-  transform: rotate(-90deg); /* Fix the orientation */
+  transform: rotate(-95deg); /* Fix the orientation */
 }
 
 .svg-pi-track,

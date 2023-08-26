@@ -24,11 +24,12 @@ const Volume = ()=>{
     },[barLevel])
 
     return(<div className="Volume_Wrapper">
-        <p className="Volume_label">Volume level : <span>{status}</span> </p>
+        <p className="Volume_label" data-testid="volumeStatus">Volume level : <span>{status}</span></p>
         <div className="Volume">
             {[1,2,3,4,5].map((_,index)=>{
-                return(  <div style={{background:barLevel <= index+1 ? "white" : "#819DA8"}}
-                             onClick={()=>volumeHandler(index)} className={`bar${index+1}`}>
+                return(  <div key={index} 
+                              style={{background:barLevel <= index+1 ? "white" : "#819DA8"}}
+                              onClick={()=>volumeHandler(index)} className={`bar bar${index+1}`}>
                          </div>)
             })}
          

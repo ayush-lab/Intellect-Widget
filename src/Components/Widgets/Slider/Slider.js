@@ -8,11 +8,12 @@ const Slider = ()=>{
 
     function circularProgress(value){
         let progress = (value)*10;
+        // console.log("called")
         return progress;
-
     }
 
     const SliderInputHandler=(event)=>{
+        // console.log("set progress called")
         setProgress(event.target.value)
     }
 
@@ -26,7 +27,7 @@ const Slider = ()=>{
                         progress={circularProgress(progress)}
                         trackWidth={5} 
                         indicatorWidth={5}
-                        />
+                    />
                 </div>
             </div>
 
@@ -34,7 +35,9 @@ const Slider = ()=>{
             <div className={styles.Slider_input}>
                 <input 
                     style={{background:"#6CD1DC"}} 
-                    type="range" min="0" max="10"
+                    type="range" 
+                    min="0" 
+                    max="10"
                     value={progress}
                     onChange={SliderInputHandler}/>
             </div>

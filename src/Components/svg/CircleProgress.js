@@ -52,10 +52,10 @@ const CircleProgress = props => {
             />
             <circle
               className={`svg-pi-indicator`}
-              cx={center}
-              cy={center}
+              // cx={center}
+              // cy={center}
               fill="transparent"
-              r={radius}
+              // r={radius}
               stroke={indicatorColor}
               strokeWidth={indicatorWidth}
               strokeDasharray={dashArray}
