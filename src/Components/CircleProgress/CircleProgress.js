@@ -34,6 +34,7 @@ const CircleProgress = props => {
     return (
       <>
         <div
+          data-testid="circularProgress"
           className="svg-pi-wrapper"
           style={{ width: size, height: size }}
         >
@@ -66,6 +67,7 @@ const CircleProgress = props => {
           <div className="svg-pi-label">
             <span className="svg-pi-label__loading">
               <input 
+                data-testid="sliderInput"
                 type="text" 
                 value={Math.floor(progress/10)}
                 onChange={ProgressInputHandler} 

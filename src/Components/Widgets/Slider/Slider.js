@@ -1,4 +1,4 @@
-import CircleProgress from '../../svg/CircleProgress'
+import CircleProgress from '../../CircleProgress/CircleProgress'
 import styles from './Slider.module.css'
 import { useState } from 'react'
 
@@ -23,6 +23,7 @@ const Slider = ()=>{
             <div className={styles.outer_circle}>   
                 <div className={styles.outer_main_circle}>
                     <CircleProgress 
+                        data-testid="circularProgress"
                         setProgress={setProgress} 
                         progress={circularProgress(progress)}
                         trackWidth={5} 
