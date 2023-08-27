@@ -1,3 +1,5 @@
+import InputBox from "../Input/Input"
+
 const CircleProgress = props => {
 
   let {
@@ -24,11 +26,9 @@ const CircleProgress = props => {
       return;
     }
 
-    if(value <=10)  
-      setProgress(value)
+    if(value <=10) setProgress(value)
 
-    else 
-      alert("Invalid input, Enter between 0 and 10. Your value = " + value)
+    else alert("Invalid input, Enter between 0 and 10. Your value = " + value)
   }
    
     return (
@@ -44,19 +44,11 @@ const CircleProgress = props => {
           >
             <circle
               className="svg-pi-track"
-              // cx={center}
-              // cy={center}
-              // r={radius}
               fill="#446D7D"
-              // stroke={trackColor}
-              // strokeWidth={trackWidth}
             />
             <circle
               className={`svg-pi-indicator`}
-              // cx={center}
-              // cy={center}
               fill="transparent"
-              // r={radius}
               stroke={indicatorColor}
               strokeWidth={indicatorWidth}
               strokeDasharray={dashArray}
@@ -66,12 +58,11 @@ const CircleProgress = props => {
           </svg>
           <div className="svg-pi-label">
             <span className="svg-pi-label__loading">
-              <input 
-                data-testid="sliderInput"
-                type="text" 
+              <InputBox
+                testId="sliderInput"
                 value={Math.floor(progress/10)}
-                onChange={ProgressInputHandler} 
-                />
+                ProgressInputHandler={ProgressInputHandler}
+              />
             </span>
           </div>
 

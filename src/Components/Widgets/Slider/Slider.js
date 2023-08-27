@@ -6,14 +6,12 @@ const Slider = ()=>{
 
     const [progress, setProgress] = useState(0)
 
-    function circularProgress(value){
+    const circularProgress=(value)=>{
         let progress = (value)*10;
-        // console.log("called")
         return progress;
     }
 
     const SliderInputHandler=(event)=>{
-        // console.log("set progress called")
         setProgress(event.target.value)
     }
 
