@@ -3,7 +3,8 @@ const InputBox = props => {
     let {
       testId,
       value,
-      ProgressInputHandler
+      ProgressInputHandler,
+      onBlur
     } = props
   
     
@@ -15,6 +16,7 @@ const InputBox = props => {
             type="text" 
             value={value}
             onChange={ProgressInputHandler} 
+            onBlur={onBlur}
         />
             
         </>

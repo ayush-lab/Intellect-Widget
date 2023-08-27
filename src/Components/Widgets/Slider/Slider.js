@@ -1,12 +1,15 @@
 import CircleProgress from '../../CircleProgress/CircleProgress'
 import styles from './Slider.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Slider = ()=>{
 
-    const [progress, setProgress] = useState(0)
-
+    const [progress, setProgress] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+    const [size, setSize] = useState(150)
+    
     const circularProgress=(value)=>{
+        if(value === '') return '';
         let progress = (value)*10;
         return progress;
     }
@@ -14,6 +17,30 @@ const Slider = ()=>{
     const SliderInputHandler=(event)=>{
         setProgress(event.target.value)
     }
+
+    useEffect(() => {
+        window
+        .matchMedia("(max-width: 400px)")
+        .addEventListener('change', e => setIsMobile(e.matches));
+
+        return ()=>{
+            window
+            .matchMedia("(max-width: 400px)")
+            .removeEventListener('change',e => setIsMobile(e.matches));
+        }
+    
+      }, []);
+
+    useEffect(() => {
+      
+        if(isMobile){
+            setSize(120)
+        }
+        else setSize(150)
+      
+      }, [isMobile]);
+
+
 
     return(<div className={styles.Slider_Wrapper}>
     <div className={styles.Slider}>
@@ -26,6 +53,7 @@ const Slider = ()=>{
                         progress={circularProgress(progress)}
                         trackWidth={5} 
                         indicatorWidth={5}
+                        size={size}
                     />
                 </div>
             </div>
@@ -37,7 +65,7 @@ const Slider = ()=>{
                     type="range" 
                     min="0" 
                     max="10"
-                    value={progress}
+                    value={progress==='' ? 0 : progress}
                     onChange={SliderInputHandler}/>
             </div>
         </div>

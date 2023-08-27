@@ -1,7 +1,9 @@
+import { useState } from "react"
 import InputBox from "../Input/Input"
+import "./CircleProgress.css"
 
 const CircleProgress = props => {
-
+  
   let {
     size = 150,
     progress = 0,
@@ -13,24 +15,35 @@ const CircleProgress = props => {
   } = props
 
   const center = size / 2,
-  radius = center - (trackWidth > indicatorWidth ? trackWidth : indicatorWidth),
-  dashArray = 2 * Math.PI * radius,
-  dashOffset = dashArray * ((100 - progress) / 100)
+  radius = center - (trackWidth > indicatorWidth ? trackWidth : indicatorWidth)
+  const dashArray = 2 * Math.PI * radius;
+  const dashOffset = dashArray * ((100 - progress) / 100)
+ 
+
+  const [isInnerInput, setIsInnerInput] = useState(false)
 
   const ProgressInputHandler=(e)=>{
-    console.log(e.target.value)
+    setIsInnerInput(true);
     let value = e.target.value;
 
     if(isNaN(value)){
-      alert("please enter a number")
-      return;
+       alert("please enter a number")
+       return;
     }
 
-    if(value <=10) setProgress(value)
+    if(value <=10) {
+      setProgress(value)
+    }
 
     else alert("Invalid input, Enter between 0 and 10. Your value = " + value)
+    
   }
-   
+
+  const onBlueHandler = ()=>{
+    console.log("out of the input box")
+    setIsInnerInput(false)
+  }
+
     return (
       <>
         <div
@@ -60,8 +73,9 @@ const CircleProgress = props => {
             <span className="svg-pi-label__loading">
               <InputBox
                 testId="sliderInput"
-                value={Math.floor(progress/10)}
+                value={isInnerInput? [progress ==='' ? '' : [progress === 0 ? 0 : Math.floor(progress/10)] ] : Math.floor(progress/10)}
                 ProgressInputHandler={ProgressInputHandler}
+                onBlur={onBlueHandler}
               />
             </span>
           </div>

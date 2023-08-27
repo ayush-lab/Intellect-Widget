@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import Slider from './Components/Widgets/Slider/Slider';
 import {Routes, Route} from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar';
